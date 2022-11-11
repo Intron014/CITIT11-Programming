@@ -76,7 +76,7 @@ void resetear(char reset[maximo_chars]){
     }
 }
 void poner_posicion(char pos[maximo_chars],int n, char r){
-
+    pos[n] = r;
 }
 int bits_blanco(char white[maximo_chars]){
 
