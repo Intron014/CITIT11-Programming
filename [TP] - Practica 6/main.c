@@ -82,7 +82,12 @@ int bits_blanco(char white[maximo_chars]){
 
 }
 void insertar_final(char ins[maximo_chars],char c){
+    int pos;
 
+    for (pos = 0; pos < maximo_chars - 1; pos++)
+        ins[pos] = ins[pos + 1];
+
+    ins[pos] = c;
 }
 void prn_binario(char printing[maximo_chars]){
     int pos;
