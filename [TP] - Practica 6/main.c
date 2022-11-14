@@ -79,7 +79,13 @@ void poner_posicion(char pos[maximo_chars],int n, char r){
     pos[n] = r;
 }
 int bits_blanco(char white[maximo_chars]){
+    int pos, contador;
 
+    for (pos = 0, contador = 0; pos < maximo_chars; pos++)
+        if (white[pos] == ' ')
+            contador++;
+
+    return contador;
 }
 void insertar_final(char ins[maximo_chars],char c){
     int pos;
