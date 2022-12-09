@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#define matriculations 15
+#define matriculations 1500
 //
 int random_number(int low, int max)
 {
@@ -12,8 +12,10 @@ int random_number(int low, int max)
 }
 void mat_gen(char mat[matriculations][11]) //Genera las matriculas
 {
-    int rnd, posf, posc;
-    printf("Plate Generator 3000:\n");
+    FILE * file;
+    file=fopen("potato.txt", "w");
+    int rnd, posf, posc, gens=matriculations;
+    printf("Plate Generator %i:\n", gens);
     for(posf=0;posf<matriculations;posf++){
         for(posc=0;posc<11;posc++){
             if(posc==0){
@@ -34,8 +36,10 @@ void mat_gen(char mat[matriculations][11]) //Genera las matriculas
                 mat[posf][posc]='\0';
             }
         }
+        fprintf(file, "%s\n", mat[posf]);
         //printf("%s\n", mat[posf]);
     }
+    fclose(file);
 }
 unsigned old_plater (char mat[matriculations][11]) //Da la oldest matricula
 {
@@ -66,6 +70,7 @@ int main() {
     srand(time(NULL));
     char mat[matriculations][11];
     mat_gen(&mat);
+    printf("Done!\n");
     printf("\n%s\n", mat[old_plater(mat)]);
-    le_cwoissant(mat);
+    //le_cwoissant(mat);
 }
