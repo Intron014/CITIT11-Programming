@@ -69,17 +69,11 @@ void remove_chars(FILE *infile, char *outfile_name, char *chars) {
     }
     word_count=count_words(file);
     printf("The file contains %d words\n", word_count);
+    rewind(file);
+    largest_line(file);
+    rewind(file);
+    remove_chars(file, "salida.txt", "abc");
     fclose(file);
-    FILE *file2 = fopen("input.txt", "r");
-    if (!file2) {
-        printf("Error: The file couldn't be opened.\n");
-        return 2;
-    }
-    largest_line(file2);
-    fclose(file2);
-    FILE *infile = fopen("input.txt", "r");
-    remove_chars(infile, "salida.txt", "abc");
-    fclose(infile);
 }
 
 
