@@ -8,7 +8,7 @@ typedef struct{
     unsigned anio_matric;
 }ASEGURADO;
 
-void opc1(FILE *data) {
+void company_search(FILE *data) {
     char nombre_compania[45];
     int i;
     printf("\nIntroduce el nombre de la compania: ");
@@ -27,7 +27,7 @@ void opc1(FILE *data) {
     }
 }
 
-void opc2(FILE *data) {
+void year_search(FILE *data) {
     unsigned anio;
     printf("\nIntroduce el anio de matriculacion: ");
     scanf("%u", &anio);
@@ -41,7 +41,7 @@ void opc2(FILE *data) {
     }
 }
 
-void opc3(FILE *data) {
+void cp_search(FILE *data) {
     char codigo_postal[3];
     printf("\nIntroduce los dos primeros digitos del CP: ");
     scanf("%s", codigo_postal);
@@ -56,7 +56,7 @@ void opc3(FILE *data) {
     }
 }
 
-void opc4(FILE *data){
+void printer(FILE *data){
     ASEGURADO conductor;
     FILE *output;
     output=fopen("C:\\Users\\me\\Documents\\GitHub\\CITIT11-Programming\\[TP] - Practica 13\\output.txt","w");
@@ -98,19 +98,19 @@ int main(int argc, char *argv[]) {
 
         switch (opcion) {
             case 1:
-                opc1(data);
+                company_search(data);
                 pause();
                 break;
             case 2:
-                opc2(data);
+                year_search(data);
                 pause();
                 break;
             case 3:
-                opc3(data);
+                cp_search(data);
                 pause();
                 break;
             case 4:
-                opc4(data);
+                printer(data);
                 pause();
                 break;
             case 0:
