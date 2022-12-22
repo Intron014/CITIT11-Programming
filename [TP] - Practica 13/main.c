@@ -2,6 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <locale.h>
 
 typedef struct{
     char nombre[15], apellidos[35], domicilio[40], poblacion[35], cod_post[6], aseguradora[45], matricula[11];
@@ -64,7 +65,7 @@ void printer(FILE *data){
     while(fread(&conductor, sizeof(ASEGURADO), 1, data)){
         /*printf("%s %s - Matricula: %s - anio matriculacion: %u\nDireccion: %s - %s\n--\n",
                conductor.nombre, conductor.apellidos, conductor.matricula, conductor.anio_matric, conductor.domicilio, conductor.poblacion);*/
-        fprintf(output, "%s %s - Matricula: %s - anio matriculacion: %u\nDireccion: %s - %s\n--\n",
+        fprintf(output, "%s %s - Matricula: %s - anio matriculacion: %u Direccion: %s - %s\n",
                 conductor.nombre, conductor.apellidos, conductor.matricula, conductor.anio_matric, conductor.domicilio, conductor.poblacion);
     }
     fclose(output);
@@ -91,7 +92,7 @@ int main(int argc, char *argv[]) {
         printf("1. Search by company.\n");
         printf("2. Search by year (and upwards).\n");
         printf("3. Search by postal code (Two first digits).\n");
-        //printf("4. Print the whole file & Saves it to a .txt\n");
+        printf("4. Print the whole file & Saves it to a .txt\n");
         printf("0. Exit.\n");
         printf("\nMake a selection: ");
         scanf("%d", &opcion);
