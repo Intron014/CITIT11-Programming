@@ -22,7 +22,7 @@ int main() {
         } while (ans == 'N' || ans == 'n');
 
         if (e == 0) {
-            printf("Base: %i\nExponente: %i\nDecimal: 1\n---\n", b, pos);
+            printf("Base: %i\nExponente: %i\nDecimal: 1\n---\n", b, e);
             printf("Bit 0: 1\n");
             printf("---\n");
         } else {

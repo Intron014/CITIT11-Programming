@@ -55,9 +55,8 @@ int main() {
         maskanio<<=8;
         maskanio |= mask;
     }
-    printf("%d\n", maskanio);
     //Pt6
-    while (fread(&conductores, sizeof(ASEGURADO), 1, f1) == 1) {
+    while (fread(&conductores, sizeof(ASEGURADO), 1, f1)) {
         for (i=0; conductores.nombre[i]; i++){
             conductores.nombre[i] ^= mask;
         }
@@ -91,7 +90,7 @@ int main() {
         fclose(f3);
         return 4;
     }
-    while (fread(&conductores, sizeof(ASEGURADO), 1, f1) == 1){
+    while (fread(&conductores, sizeof(ASEGURADO), 1, f1)){
         printf("%s %s - Matricula: %s - anio matriculacion: %u\nDireccion: %s - %s\n--\n",
                conductores.nombre, conductores.apellidos, conductores.matricula, conductores.anio_matric, conductores.domicilio, conductores.poblacion);
     }

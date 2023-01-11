@@ -62,13 +62,13 @@ int main()
         printf("Representacion binaria: ");
         binario_entera((int)n, num);
         prn_binario(num);
-        //binario_fraccionaria(n-(int)n, num);
+        binario_fraccionaria(n-(int)n, num);
         prn_binario(num);
-        /*printf("\n");
-        for(pos=0;pos<maximo_chars;pos++){
+        printf("\n");
+        /*for(pos=0;pos<maximo_chars;pos++){
             printf("%c", array[pos]);
-        }*/
-        notacion_cientifica(num, &exp);
+        }
+        notacion_cientifica(num, &exp);*/
         // The end and repeat
         printf("\nDesea repetir la experiencia inolvidable que es convertir un numero a binario? (y/n)");
         fflush(stdin);
@@ -129,7 +129,6 @@ void prn_binario(char printing[maximo_chars]){
     for(pos=0;pos<maximo_chars;pos++){
         if(printing[pos]!=' '){
             printf("%c",printing[pos]);
-            insertar_final();
         }
     }
 }
